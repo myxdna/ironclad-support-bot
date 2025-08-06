@@ -580,20 +580,22 @@ app.action('answer_helpful', async ({ body, ack, client, logger }) => {
       name: 'white_check_mark'
     });
     
-    // Update the bot message
+    // Don't replace the content - just remove the buttons and add confirmation
+    const originalBlocks = body.message.blocks.filter(block => block.type !== 'actions');
+    
+    // Add a confirmation message
+    originalBlocks.push({
+      type: 'section',
+      text: {
+        type: 'mrkdwn',
+        text: '_✅ Great! Glad this helped._'
+      }
+    });
+    
     await client.chat.update({
       channel: body.channel.id,
       ts: body.message.ts,
-      text: '✅ Great! I\'m glad I could help. The original message has been marked as resolved.',
-      blocks: [
-        {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: '✅ Great! I\'m glad I could help. The original message has been marked as resolved.'
-          }
-        }
-      ]
+      blocks: originalBlocks
     });
   } catch (error) {
     logger.error('Error handling helpful response:', error);
@@ -627,20 +629,23 @@ app.action('answer_not_helpful', async ({ body, ack, client, logger }) => {
       ]
     });
     
-    // Update the bot message
+    // Don't update the original message - just remove the buttons
+    // Get the original blocks and remove only the actions block
+    const originalBlocks = body.message.blocks.filter(block => block.type !== 'actions');
+    
+    // Add a note that help was requested
+    originalBlocks.push({
+      type: 'section',
+      text: {
+        type: 'mrkdwn',
+        text: '_❌ Additional help requested - someone will respond in thread_'
+      }
+    });
+    
     await client.chat.update({
       channel: body.channel.id,
       ts: body.message.ts,
-      text: 'Additional help options provided in thread.',
-      blocks: [
-        {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: '❌ Additional help options provided in thread.'
-          }
-        }
-      ]
+      blocks: originalBlocks
     });
   } catch (error) {
     logger.error('Error handling not helpful response:', error);
