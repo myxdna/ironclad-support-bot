@@ -206,6 +206,18 @@ This collects only our signatures on their pre-signed doc. Simple process - just
     content: `**You are responsible for getting signatures!**
 
 The person who creates the workflow owns the signature process. Legal team does not collect signatures for you.`
+  },
+  demo_access: {
+    keywords: ['demo access', 'demo form', 'access form', 'demo access form'],
+    title: 'Demo Access Form',
+    content: `For demo access forms, use the **Consent Forms** workflow.
+
+This workflow is used to gather customer consent for:
+• Using their environment to demo our product
+• Using their footage for marketing purposes
+• Any other reason requiring customer consent
+
+**To find it:** Click "New" in Ironclad and look for "Consent Forms"`
   }
 };
 
@@ -617,13 +629,13 @@ app.action('answer_not_helpful', async ({ body, ack, client, logger }) => {
     await client.chat.postMessage({
       channel: body.channel.id,
       thread_ts: body.message.thread_ts,
-      text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\nSomeone from the team will respond to help you.',
+      text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• In Ironclad, click "New" to browse all workflows - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\nSomeone from the team will respond to help you.',
       blocks: [
         {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\n**Someone from the team will respond to help you.**'
+            text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• **In Ironclad, click "New" to browse all workflows** - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\n**Someone from the team will respond to help you.**'
           }
         }
       ]
