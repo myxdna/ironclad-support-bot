@@ -146,6 +146,21 @@ Note: Templates may need customization based on your specific use case.`
 
 **This channel (#ironclad) is the right place for all contract and legal document questions!**`
   },
+  thirdparty_nda: {
+    keywords: ['nda from prospect', 'nda from client', 'their nda', 'they sent nda', 'received nda', 'prospect nda', 'client nda', 'third party nda'],
+    title: 'Third-Party NDA Upload',
+    content: `**Have an NDA from a prospect/client that they'd like you to sign?**
+
+Use the **NDA workflow** to upload the contract for review:
+
+1. Click "New" → "NDA" in Ironclad
+2. Select "Upload third-party NDA" option
+3. Upload their NDA document
+4. Fill out the required information
+5. Submit for legal review
+
+The legal team will review and advise on any needed changes.`
+  },
   cs_access: {
     keywords: ['cs access', 'customer success access', 'csm access', 'cs ironclad'],
     title: 'Customer Success Access',
