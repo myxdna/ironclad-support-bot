@@ -234,6 +234,21 @@ This workflow is used to gather customer consent for:
 • Any other reason requiring customer consent
 
 **To find it:** Click "Start a workflow" in Ironclad and look for "Consent Forms"`
+  },
+  pilot_project: {
+    keywords: ['pilot', 'pilot project', 'poc', 'proof of concept', 'pilot template', 'trial', 'pilot agreement'],
+    title: 'Pilot Project Templates',
+    content: `**Running a pilot project? There's a specific template for that!**
+
+Do NOT use the regular master template for pilots. Instead, use one of these:
+
+1. **2025 Pilot Solink Master Subscription & Cameras Template**
+   → For unpaid pilot projects
+
+2. **2025 Paid Pilot Solink Master Subscription & Cameras Template**
+   → For paid pilot projects
+
+**Important:** Do not use the regular master template and write your own legal terms for pilots please.`
   }
 };
 
