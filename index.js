@@ -42,7 +42,7 @@ const LOCAL_KNOWLEDGE = {
 **Deployment Contracts** → (Deployment only) Generate work orders or review change orders
 **Financial and Legal Documents** → (Finance/Legal only) Upload documents for signature
 **Master Services Agreement (MSA)** → Generate MSA for new customers
-**NDA** → Generate Solink NDA or review third party NDAs
+**MNDA (Mutual Non-Disclosure Agreement)** → Generate Solink MNDA or review third party NDAs/MNDAs
 **Partner Agreements** → Generate Reseller or Representative Agreements
 **Riders** → Generate Dominos and other riders
 **Tech Intake Form** → (No longer used - use HubSpot instead for installer intake)
@@ -140,24 +140,25 @@ Note: Templates may need customization based on your specific use case.`
     title: 'NDA/MNDA Questions',
     content: `For NDA or MNDA (Mutual Non-Disclosure Agreement) questions:
 
-**Use the NDA workflow** in Ironclad to generate or review NDAs
+**Use the MNDA workflow** in Ironclad to generate or review NDAs/MNDAs
 
 **For specific questions:** Post in #ironclad or ping the legal team (@Rachael or @Hannah Buechel)
 
 **This channel (#ironclad) is the right place for all contract and legal document questions!**`
   },
   thirdparty_nda: {
-    keywords: ['nda from prospect', 'nda from client', 'their nda', 'they sent nda', 'received nda', 'prospect nda', 'client nda', 'third party nda'],
-    title: 'Third-Party NDA Upload',
-    content: `**Have an NDA from a prospect/client that they'd like you to sign?**
+    keywords: ['nda from prospect', 'nda from client', 'their nda', 'they sent nda', 'received nda', 'prospect nda', 'client nda', 'third party nda', 'mnda from prospect', 'mnda from client'],
+    title: 'Third-Party NDA/MNDA Upload',
+    content: `**Have an NDA/MNDA from a prospect/client that they'd like you to sign?**
 
-Use the **NDA workflow** to upload the contract for review:
+Use the **MNDA (Mutual Non-Disclosure Agreement)** workflow to upload the contract for review:
 
-1. Click "New" → "NDA" in Ironclad
-2. Select "Upload third-party NDA" option
-3. Upload their NDA document
-4. Fill out the required information
-5. Submit for legal review
+1. Click "Start a workflow" in Ironclad
+2. Select "Mutual Non-Disclosure Agreement (MNDA)"
+3. Choose "Upload other party's contract (counterparty paper)"
+4. Upload their NDA/MNDA document
+5. Fill out the required information
+6. Submit for legal review
 
 The legal team will review and advise on any needed changes.`
   },
@@ -232,7 +233,7 @@ This workflow is used to gather customer consent for:
 • Using their footage for marketing purposes
 • Any other reason requiring customer consent
 
-**To find it:** Click "New" in Ironclad and look for "Consent Forms"`
+**To find it:** Click "Start a workflow" in Ironclad and look for "Consent Forms"`
   }
 };
 
@@ -650,7 +651,7 @@ app.action('answer_not_helpful', async ({ body, ack, client, logger }) => {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• **In Ironclad, click "New" to browse all workflows** - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\n**Someone from the team will respond to help you.**'
+            text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• **In Ironclad, click "Start a workflow" to browse all workflows** - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\n**Someone from the team will respond to help you.**'
           }
         }
       ]
