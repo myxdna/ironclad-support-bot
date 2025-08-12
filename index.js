@@ -249,6 +249,23 @@ Do NOT use the regular master template for pilots. Instead, use one of these:
    → For paid pilot projects
 
 **Important:** Do not use the regular master template and write your own legal terms for pilots please.`
+  },
+  external_signature: {
+    keywords: ['cant use ironclad', 'must use adobe', 'docusign', 'pandadoc', 'wet signature', 'pen and paper', 'other signature', 'external signature', 'different signature'],
+    title: 'Using External Signature Providers',
+    content: `**Someone can't use Ironclad and must use Adobe Sign/DocuSign/etc?**
+
+All types of signatures are OK! Whether it's:
+• Ironclad E-Signature (easiest option!)
+• Adobe Sign, DocuSign, PandaDoc
+• Even "wet signature" with pen and paper
+
+**How to handle external signatures:**
+
+1. Make sure the workflow is in the **Sign Stage** (all approvals collected)
+2. Follow instructions for uploading signed documents: https://support.ironcladapp.com/hc/en-us/articles/12276801813271-Upload-Signed-Documents
+3. Upload the document and select the people **who have already signed**
+4. Ironclad E-Signature will send requests to remaining signers, if applicable`
   }
 };
 
