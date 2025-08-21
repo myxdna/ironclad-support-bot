@@ -100,6 +100,8 @@ This handles contracts that are partially or fully signed outside the system.`
 
 **Training:** Go to academy.ironcladapp.com
 
+**Need help?** Ask the Ironclad Assistant GPT: https://chatgpt.com/g/g-68a4e4694ec081919dae9c71556775c7-ironclad-assistant
+
 **Wrong Bamboo task?** Ping @Nadia Vizcardo`
   },
   pii: {
@@ -263,7 +265,7 @@ All types of signatures are OK! Whether it's:
 **How to handle external signatures:**
 
 1. Make sure the workflow is in the **Sign Stage** (all approvals collected)
-2. Follow instructions for uploading signed documents: https://support.ironcladapp.com/hc/en-us/articles/12276801813271-Upload-Signed-Documents
+2. For detailed instructions on uploading signed documents, ask the Ironclad Assistant GPT: https://chatgpt.com/g/g-68a4e4694ec081919dae9c71556775c7-ironclad-assistant
 3. Upload the document and select the people **who have already signed**
 4. Ironclad E-Signature will send requests to remaining signers, if applicable`
   }
@@ -677,13 +679,13 @@ app.action('answer_not_helpful', async ({ body, ack, client, logger }) => {
     await client.chat.postMessage({
       channel: body.channel.id,
       thread_ts: body.message.thread_ts,
-      text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• In Ironclad, click "New" to browse all workflows - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\nSomeone from the team will respond to help you.',
+      text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• In Ironclad, click "Start a workflow" to browse all workflows - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Ask the Ironclad Assistant GPT: https://chatgpt.com/g/g-68a4e4694ec081919dae9c71556775c7-ironclad-assistant\n\nSomeone from the team will respond to help you.',
       blocks: [
         {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• **In Ironclad, click "Start a workflow" to browse all workflows** - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Contact Ironclad support directly at support@ironcladapp.com\n\n**Someone from the team will respond to help you.**'
+            text: 'I\'m sorry the articles didn\'t help. Here are some options:\n\n• Try searching with different keywords\n• **In Ironclad, click "Start a workflow" to browse all workflows** - each has a description of when to use it\n• Post your specific issue and someone from the team will help\n• Ask the Ironclad Assistant GPT: https://chatgpt.com/g/g-68a4e4694ec081919dae9c71556775c7-ironclad-assistant\n\n**Someone from the team will respond to help you.**'
           }
         }
       ]
